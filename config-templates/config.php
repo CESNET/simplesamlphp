@@ -1093,4 +1093,17 @@ $config = array(
      * The prefix we should use on our Redis datastore.
      */
     'store.redis.prefix' => 'SimpleSAMLphp',
+
+    /*********************
+     | IdP/SP PROXY MODE |
+     *********************/
+
+    /*
+     * If SP behind the SimpleSAMLphp in IdP/SP proxy mode requests
+     * AuthnContextClassRef, decide whether the AuthnContextClassRef will be
+     * processed by the IdP/SP proxy or if it will be passed to the original
+     * IdP in front of the IdP/SP proxy.
+     */
+
+     'proxymode.passAuthnContextClassRef' => false,
 );
