@@ -208,6 +208,19 @@ class sspmod_saml_Auth_Source_SP extends SimpleSAML_Auth_Source {
 				$comp = $state['saml:AuthnContextComparison'];
 			}
 			$ar->setRequestedAuthnContext(array('AuthnContextClassRef' => $accr, 'Comparison' => $comp));
+		} elseif (isset($state['saml:RequestedAuthnContext']) && isset($state['saml:RequestedAuthnContext']['AuthnContextClassRef'])) {
+			if (isset($state['saml:RequestedAuthnContext']['Comparison']) && in_array($state['saml:RequestedAuthnContext']['Comparison'], array(
+						SAML2\Constants::COMPARISON_EXACT,
+						SAML2\Constants::COMPARISON_MINIMUM,
+						SAML2\Constants::COMPARISON_MAXIMUM,
+						SAML2\Constants::COMPARISON_BETTER,
+			))) {
+				// RequestedAuthnContext has been set by an SP behind the proxy so pass it to the upper IdP
+				$ar->setRequestedAuthnContext(array(
+					'AuthnContextClassRef' => $state['saml:RequestedAuthnContext']['AuthnContextClassRef'],
+					'Comparison' => $state['saml:RequestedAuthnContext']['Comparison'])
+				);
+			}
 		}
 
 		if (isset($state['ForceAuthn'])) {

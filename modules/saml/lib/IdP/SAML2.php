@@ -877,6 +877,9 @@ class sspmod_saml_IdP_SAML2
 
         if (isset($state['saml:AuthnContextClassRef'])) {
             $a->setAuthnContext($state['saml:AuthnContextClassRef']);
+        } elseif (isset($state['saml:sp:AuthnContext'])) {
+            // AuthnContext has been set by the upper IdP in front of the proxy, pass it back to the SP behind the proxy
+            $a->setAuthnContext($state['saml:sp:AuthnContext']);
         } else {
             $a->setAuthnContext(\SAML2\Constants::AC_PASSWORD);
         }
