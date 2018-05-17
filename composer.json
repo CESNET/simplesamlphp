@@ -42,7 +42,13 @@
         "whitehat101/apr1-md5": "~1.0",
         "twig/twig": "~1.0",
         "gettext/gettext": "^3.5",
-        "jaimeperez/twig-configurable-i18n": "^1.2"
+        "jaimeperez/twig-configurable-i18n": "^1.2",
+        "cesnet/simplesamlphp-module-cesnet": "~1.1",
+        "rciam/simplesamlphp-module-authorcid": "dev-master",
+        "cesnet/simplesamlphp-module-authgoogleoauth2": "dev-master",
+        "CESNET/simplesamlphp-module-proxystatistics": "~1.1",
+        "cesnet/simplesamlphp-module-perunauthorize": "~1.0",
+        "cesnet/simplesamlphp-module-perun": "dev-master"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
@@ -55,5 +61,43 @@
     "support": {
         "issues": "https://github.com/simplesamlphp/simplesamlphp/issues",
         "source": "https://github.com/simplesamlphp/simplesamlphp"
-    }
+    },
+    "repositories":[
+        {
+            "type": "git",
+            "url": "https://github.com/CESNET/perun-simplesamlphp-module.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/elixirhub/elixir-aai-proxy-idp-template.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/ICS-MU/ceitec-aai-proxy-idp-template.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/CESNET/einfra-aai-proxy-idp-template.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/CESNET/bbmri-aai-proxy-idp-template.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/CESNET/simplesamlphp-authgoogleoauth2"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/rciam/simplesamlphp-module-authorcid.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/CESNET/proxystatistics-simplesamlphp-module.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/CESNET/perunauthorize-simplesamlphp-module.git"
+        }
+    ]
 }
