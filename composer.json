@@ -48,7 +48,9 @@
         "cesnet/simplesamlphp-module-authgoogleoauth2": "dev-master",
         "CESNET/simplesamlphp-module-proxystatistics": "~1.1",
         "cesnet/simplesamlphp-module-perunauthorize": "dev-master",
-        "cesnet/simplesamlphp-module-perun": "dev-EPTID_hack"
+        "cesnet/simplesamlphp-module-perun": "dev-EPTID_hack",
+        "cirrusidentity/simplesamlphp-module-authoauth2": "dev-master",
+        "league/oauth2-linkedin": "^4.1"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
