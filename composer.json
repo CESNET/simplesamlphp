@@ -48,7 +48,11 @@
         "cesnet/simplesamlphp-module-authgoogleoauth2": "dev-master",
         "CESNET/simplesamlphp-module-proxystatistics": "~1.1",
         "cesnet/simplesamlphp-module-perunauthorize": "~1.0",
-        "cesnet/simplesamlphp-module-perun": "dev-master"
+        "cesnet/simplesamlphp-module-perun": "dev-master",
+        "cirrusidentity/simplesamlphp-module-authoauth2": "dev-master",
+        "league/oauth2-facebook": "^2.0",
+        "league/oauth2-github": "^2.0",
+        "league/oauth2-linkedin": "^4.1"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
