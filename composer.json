@@ -43,7 +43,7 @@
         "twig/twig": "~1.0",
         "gettext/gettext": "^3.5",
         "jaimeperez/twig-configurable-i18n": "^1.2",
-        "elixir/simplesamlphp-module-elixir": "dev-master",
+        "elixir/simplesamlphp-module-elixir": "~1.1",
         "rciam/simplesamlphp-module-authorcid": "dev-master",
         "cesnet/simplesamlphp-module-authgoogleoauth2": "dev-master",
         "CESNET/simplesamlphp-module-proxystatistics": "~1.1",
