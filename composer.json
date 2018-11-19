@@ -42,7 +42,13 @@
         "whitehat101/apr1-md5": "~1.0",
         "twig/twig": "~1.0",
         "gettext/gettext": "^3.5",
-        "jaimeperez/twig-configurable-i18n": "^1.2"
+        "jaimeperez/twig-configurable-i18n": "^1.2",
+        "bbmri/simplesamlphp-module-bbmri": "~2.0",
+        "bbmri/simplesamlphp-module-lshostel": "~1.0",
+        "CESNET/simplesamlphp-module-proxystatistics": "~1.4",
+        "cesnet/simplesamlphp-module-perunauthorize": "~1.1",
+        "cesnet/simplesamlphp-module-perun": "~2.0",
+        "ualberta-iapps/simplesamlphp-module-kerberos": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8.35",
