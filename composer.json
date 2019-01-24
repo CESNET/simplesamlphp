@@ -47,8 +47,8 @@
         "CESNET/simplesamlphp-module-proxystatistics": "~1.4",
         "cesnet/simplesamlphp-module-perunauthorize": "~1.1",
         "cesnet/simplesamlphp-module-perun": "~2.0",
-        "cirrusidentity/simplesamlphp-module-authoauth2": "dev-master",
-        "league/oauth2-google": "^2.2",
+        "cirrusidentity/simplesamlphp-module-authoauth2": "^2.0",
+        "league/oauth2-google": "^3.0",
         "league/oauth2-linkedin": "^4.1",
         "cilogon/oauth2-orcid": "^1.0"
     },
