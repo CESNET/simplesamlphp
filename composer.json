@@ -51,7 +51,7 @@
         "league/oauth2-facebook": "^2.0",
         "league/oauth2-github": "^2.0",
         "league/oauth2-google": "^3.0",
-        "league/oauth2-linkedin": "^4.1",
+        "league/oauth2-linkedin": "dev-APIv2",
         "cilogon/oauth2-orcid": "^1.0"
     },
     "require-dev": {
@@ -62,5 +62,11 @@
     "support": {
         "issues": "https://github.com/simplesamlphp/simplesamlphp/issues",
         "source": "https://github.com/simplesamlphp/simplesamlphp"
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/pajavyskocil/oauth2-linkedin.git"
+        }
+    ]
 }
