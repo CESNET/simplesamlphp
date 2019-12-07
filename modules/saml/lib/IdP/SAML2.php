@@ -1156,8 +1156,13 @@ class SAML2
         }
         $a->setNotOnOrAfter($now + $assertionLifetime);
 
+        $passAuthnContextClassRef = $config->getBoolean('proxymode.passAuthnContextClassRef', false);
+
         if (isset($state['saml:AuthnContextClassRef'])) {
             $a->setAuthnContextClassRef($state['saml:AuthnContextClassRef']);
+        } elseif ($passAuthnContextClassRef && isset($state['saml:sp:AuthnContext'])) {
+            // AuthnContext has been set by the upper IdP in front of the proxy, pass it back to the SP behind the proxy
+            $a->setAuthnContextClassRef($state['saml:sp:AuthnContext']);
         } elseif (Utils\HTTP::isHTTPS()) {
             $a->setAuthnContextClassRef(Constants::AC_PASSWORD_PROTECTED_TRANSPORT);
         } else {
