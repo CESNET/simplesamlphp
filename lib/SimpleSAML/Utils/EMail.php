@@ -71,7 +71,7 @@ class EMail
         return $address;
     }
 
-    
+
     /**
      * Set the data that should be embedded in the e-mail body
      *
@@ -252,54 +252,23 @@ class EMail
      */
     public function generateBody($template)
     {
-        $config = Configuration::getInstance();
-        $newui = $config->getBoolean('usenewui', false);
-
-        if ($newui === false) {
-            $result = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>SimpleSAMLphp Email report</title>
-	<style type="text/css">
-pre, div.box {
-	margin: .4em 2em .4em 1em;
-	padding: 4px;
-}
-pre {
-	background: #eee;
-	border: 1px solid #aaa;
-}
-	</style>
-</head>
-<body>
-<h1>' . htmlspecialchars($this->mail->Subject) . '</h1>
-<div class="container" style="background: #fafafa; border: 1px solid #eee; margin: 2em; padding: .6em;">
-<blockquote>"' . htmlspecialchars($this->text) . '"</blockquote>
-</div>';
-            foreach ($this->data as $name => $values) {
-                $result .= '<h2>' . htmlspecialchars($name) . '</h2><ul>';
-                foreach ($values as $value) {
-                    $result .= '<li><pre>' . htmlspecialchars($value) . '</pre></li>';
-                }
-                $result .= '</ul>';
-            }
-        } else {
-            $t = new Template($config, $template);
-            $twig = $t->getTwig();
-            if (!isset($twig)) {
-                throw new \Exception(
-                    'Even though we explicitly configure that we want Twig,'
-                        . ' the Template class does not give us Twig. This is a bug.'
-                );
-            }
-            $result = $twig->render($template, [
-                'subject' => $this->mail->Subject,
-                'text' => $this->text,
-                'data' => $this->data
-            ]);
+        // Force mail template to be rendered by Twig, even when using oldui
+        // Replace this with the following line of code in 2.0
+        // $config = Configuration::getInstance();
+        $config = Configuration::loadFromArray([
+            'usenewui' => true,
+        ]);
+        $t = new Template($config, $template);
+        $twig = $t->getTwig();
+        if (!isset($twig)) {
+            throw new \Exception('Even though we explicitly configure that we want Twig,
+            the Template class does not give us Twig. This is a bug.');
         }
+        $result = $twig->render($template, [
+            'subject' => $this->mail->Subject,
+            'text' => $this->text,
+            'data' => $this->data
+        ]);
         return $result;
     }
 }
