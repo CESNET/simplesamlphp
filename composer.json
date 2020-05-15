@@ -83,7 +83,15 @@
         "symfony/dependency-injection": "^3.4 || ^4.0",
         "symfony/yaml": "^3.4 || ^4.0",
         "twig/twig": "~1.0 || ~2.0",
-        "whitehat101/apr1-md5": "~1.0"
+        "whitehat101/apr1-md5": "~1.0",
+        "cesnet/simplesamlphp-module-perun": "3.7.4",
+        "ics-mu/simplesamlphp-module-ceitec": "~2.0",
+        "cesnet/simplesamlphp-module-proxystatistics": "4.0",
+        "cesnet/simplesamlphp-module-perunauthorize": "~2.0",
+        "cirrusidentity/simplesamlphp-module-authoauth2": "~3.0",
+        "league/oauth2-google": "~3.0",
+        "league/oauth2-linkedin": "~5.0",
+        "cesnet/simplesamlphp-module-chartjs": "~2.8"
     },
     "require-dev": {
         "ext-curl": "*",
