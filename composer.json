@@ -82,7 +82,19 @@
         "symfony/http-kernel": "^3.4 || ^4.0",
         "symfony/dependency-injection": "^3.4 || ^4.0",
         "symfony/yaml": "^3.4 || ^4.0",
-        "twig/twig": "~1.0 || ~2.0"
+        "twig/twig": "~1.0 || ~2.0",
+        "whitehat101/apr1-md5": "~1.0",
+        "cesnet/simplesamlphp-module-perun": "~3.2",
+        "cesnet/simplesamlphp-module-cesnet": "~2.0",
+        "cesnet/simplesamlphp-module-proxystatistics": "~3.0 || ~4.0",
+        "cesnet/simplesamlphp-module-perunauthorize": "~2.0",
+        "cirrusidentity/simplesamlphp-module-authoauth2": "~3.0",
+        "league/oauth2-facebook": "~2.0",
+        "league/oauth2-github": "~2.0",
+        "league/oauth2-google": "~3.0",
+        "league/oauth2-linkedin": "~5.0",
+        "cilogon/oauth2-orcid": "^1.0",
+        "cesnet/simplesamlphp-module-chartjs":  "~2.8"
     },
     "require-dev": {
         "ext-curl": "*",
@@ -106,5 +118,12 @@
     "support": {
         "issues": "https://github.com/simplesamlphp/simplesamlphp/issues",
         "source": "https://github.com/simplesamlphp/simplesamlphp"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:vyskocilpavel/simplesamlphp-module-authoauth2.git"
+        }
+    ]
+
 }
