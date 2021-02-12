@@ -43,11 +43,11 @@
         "ext-hash": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
+        "ext-gmp": "*",
         "gettext/gettext": "^4.8",
         "phpmailer/phpmailer": "^6.1",
         "robrichards/xmlseclibs": "^3.1",
-        "simplesamlphp/assert": "^0.0.13",
-        "simplesamlphp/saml2": "^4.2",
+        "simplesamlphp/saml2": "^4.1",
         "simplesamlphp/simplesamlphp-module-adfs": "^0.9",
         "simplesamlphp/simplesamlphp-module-authcrypt": "^0.9",
         "simplesamlphp/simplesamlphp-module-authfacebook": "^0.9",
@@ -88,7 +88,24 @@
         "symfony/routing": "^4.4 || ^5.0",
         "symfony/var-exporter": "^4.4 || ^5.0",
         "symfony/yaml": "^4.4 || ^5.0",
-        "twig/twig": "^1.43 || ^2.0"
+        "twig/twig": "^1.43 || ^2.0",
+        "cesnet/simplesamlphp-module-perun": "~5.0",
+        "cesnet/simplesamlphp-module-cesnet": "~2.0",
+        "cesnet/simplesamlphp-module-proxystatistics": "~4.0",
+        "cesnet/simplesamlphp-module-perunauthorize": "~2.0",
+        "cirrusidentity/simplesamlphp-module-authoauth2": "~3.0",
+        "league/oauth2-facebook": "~2.0",
+        "league/oauth2-github": "~2.0",
+        "league/oauth2-google": "~3.0",
+        "league/oauth2-linkedin": "~5.0",
+        "cilogon/oauth2-orcid": "^1.0",
+        "cesnet/simplesamlphp-module-chartjs":  "~2.8",
+        "thenetworg/oauth2-azure": "~2.0",
+        "phpseclib/phpseclib": "~3.0",
+        "web-token/jwt-key-mgmt": "^2.2",
+        "web-token/jwt-signature": "^2.2",
+        "web-token/jwt-signature-algorithm-rsa": "^2.2",
+        "web-token/jwt-checker": "^2.2"
     },
     "require-dev": {
         "ext-curl": "*",
@@ -110,5 +127,12 @@
     "support": {
         "issues": "https://github.com/simplesamlphp/simplesamlphp/issues",
         "source": "https://github.com/simplesamlphp/simplesamlphp"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:vyskocilpavel/simplesamlphp-module-authoauth2.git"
+        }
+    ]
+
 }
