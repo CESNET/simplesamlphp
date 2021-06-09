@@ -854,6 +854,18 @@ class SP extends \SimpleSAML\Auth\Source
             }
         }
 
+        if (!empty($state['aarc_idp_hint'])) {
+            $parts = explode('?', urldecode($state['aarc_idp_hint']), 2);
+
+            if (!empty($parts[1])) {
+                $state['aarc_idp_hint'] = explode('=', $parts[1], 2)[1];
+            } else {
+                unset($state['aarc_idp_hint']);
+            }
+
+            $idp = $parts[0];
+        }
+
         if ($idp === null) {
             $this->startDisco($state);
             assert(false);

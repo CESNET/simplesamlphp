@@ -291,6 +291,8 @@ class SAML2
             $supportedBindings[] = Constants::BINDING_PAOS;
         }
 
+        $idpHint = null;
+
         if (isset($_REQUEST['spentityid']) || isset($_REQUEST['providerId'])) {
             /* IdP initiated authentication. */
 
@@ -398,6 +400,7 @@ class SAML2
             $consumerIndex = $request->getAssertionConsumerServiceIndex();
             $extensions = $request->getExtensions();
             $authnContext = $request->getRequestedAuthnContext();
+            $idpHint = $request->getIdpHint();
 
             $nameIdPolicy = $request->getNameIdPolicy();
             if (isset($nameIdPolicy['Format'])) {
@@ -487,6 +490,7 @@ class SAML2
             'saml:Extensions'             => $extensions,
             'saml:AuthnRequestReceivedAt' => microtime(true),
             'saml:RequestedAuthnContext'  => $authnContext,
+            'aarc_idp_hint'               => $idpHint,
         ];
 
         $idp->handleAuthenticationRequest($state);
